@@ -1,0 +1,209 @@
+# WebDev
+Formulario 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo</title>
+    <style>
+        body {
+         font-family: Arial, sans-serif;
+          background-color: #5d7eaf;
+           margin: 0;
+            padding: 0;
+             display: flex;
+              justify-content: center;
+               align-items: center;
+                height: 200vh;
+                 animation: fadeIn 1s ease-in-out;
+        }
+
+            @keyframes fadeIn {
+             from { opacity: 0; }
+              to { opacity: 1; }
+
+        }
+        
+        form {
+         background-color: #ffffff;
+          padding: 20px;
+           border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             width: 100%;
+              max-width: 600px;
+               animation: slideIn 1s ease-out;
+        } 
+
+        @keyframes slideIn {
+         from { transform: translateY(-50px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; } 
+            
+        }
+        
+        h1 {
+            text-align: center;
+             color: #333;
+
+        }
+        .form-group {
+            margin-bottom: 15px;
+
+        }
+        .form-group label {
+            display: block;
+             margin-bottom: 5px;
+              color: #555;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+             padding: 10px;
+              border: 1px solid #ccc;
+               border-radius: 4px;
+                box-sizing: border-box;
+                 transition: border-color 0.3s, box-shadow 0.3s;
+
+        }
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: #007BFF;
+             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .form-group input[type="checkbox"], 
+        .form-group input[type="radio"] {
+            width: auto;
+
+        }
+        .form-group .checkbox-group,
+        .form-group .radio-group {
+            display: flex;
+             gap: 10px;
+
+        }
+        .form-actions {
+            display: flex;
+             justify-content: space-between;
+
+        }
+        .form-actions input[type="submit"] {
+            background-color: #007BFF;
+             color: #fff;
+              border: none;
+               padding: 10px 20px;
+                border-radius: 4px;
+                 cursor: pointer;
+                  font-size: 16px;
+                   transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .form-actions input[type="submit"]:hover,
+        .form-actions input[type="reset"]:hover {
+            background-color: #0056b3;
+
+        }
+
+        .form-actions input[type="reset"]:hover {
+            background-color: #c82333;
+
+        }
+
+        .form-actions input[type="submit"]:active,
+        .form-actions input[type="reset"]:active {
+            transform: scale(0.98);
+
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+
+        <h1 style="font-family: Arial, Helvetica, sans-serif;"> FORMULÁRIO COMPLETO </h1>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="Nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="Endereço" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone Residencial:</label>
+            <input type="tel" id="telefone" name="Telefone Residencial" required pattern="\d{7}-?\d{4}" placeholder="(00)90000-0000">
+        </div>
+
+        <div class="form-group">
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" name="Celular" required pattern="\d{7}-?\d{4}" placeholder="(00)90000-0000">
+        </div>
+
+        <div class="form-group">
+            <label for="rec">Rec:</label>
+            <input type="text" id="rec" name="Rec">
+        </div>
+
+        <div class="form-group">
+            <label>Interesse por qual departamento:</label>
+            <div class="checkbox-group">
+                <label> <input type="checkbox" name="departamento" value="Comercial"> Comercial </label>
+                <label> <input type="checkbox" name="departamento" value="Técnico"> Técnico </label>
+                <label> <input type="checkbox" name="departamento" value="Transportes"> Transportes </label>
+                <label> <input type="checkbox" name="departamento" value="RH"> RH </label>
+                <label> <input type="checkbox" name="departamento" value="TI"> TI </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Sexo:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="sexo" value="Masculino"> Masculino</label>
+                <label><input type="radio" name="sexo" value="Feminino"> Feminino</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="estado-civil">Estado civil:</label>
+            <select id="estado-civil" name="Estado civil" required>
+                <option value="Casado">Casado(a)</option>
+                <option value="Solteiro">Solteiro(a)</option>
+                <option value="Divorciado">Divorciado(a)</option>
+                <option value="Viuvo">Viúvo(a)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Formação:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="formacao" value="Técnica"> Técnica</label>
+                <label><input type="checkbox" name="formacao" value="Superior"> Superior</label>
+                <label><input type="checkbox" name="formacao" value="Pós graduação"> Pós-graduação (especialização)</label>
+                <label><input type="checkbox" name="formacao" value="Mestrado"> Mestrado</label>
+                <label><input type="checkbox" name="formacao" value="Doutorado"> Doutorado</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="interesse">Qual o seu interesse em trabalhar nesta empresa?</label>
+            <textarea draggable="false" id="interesse" name="DIgite aqui" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="curriculo">Anexe seu currículo:</label>
+            <input type="file" id="curriculo" name="curriculo">
+        </div>
+
+        <div class="form-actions">
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </div>
+
+    </form>
+</body>
+</html>
