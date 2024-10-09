@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz do Linkin Park</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page">
+        <form class="formLogin" id="quizForm" onsubmit="calcularPontuacao(); return false;">
+            <h1>Quiz do Linkin Park</h1>
+            <p>Teste seus conhecimentos sobre a banda!</p>
+
+            <!-- Pergunta 1 -->
+            <label for="q1">1. Quem é a atual vocalista do Linkin Park?</label>
+            <select id="q1" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="0">Mike Shinoda</option>
+                <option value="1">Emilly Armstrong</option>
+                <option value="0">Chester Bennington</option>
+                <option value="0">Joe Hahn</option>
+            </select>
+
+            <!-- Pergunta 2 -->
+            <label for="q2">2. Qual álbum foi lançado pelo Linkin Park em 2020?</label>
+            <select id="q2" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="1">Hybrid Theory: 20th Anniversary Edition</option>
+                <option value="0">One More Light</option>
+                <option value="0">Living Things</option>
+                <option value="0">A Thousand Suns</option>
+            </select>
+
+            <!-- Pergunta 3 -->
+            <label for="q3">3. Qual música do Linkin Park ganhou um Grammy em 2002?</label>
+            <select id="q3" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="1">Crawling</option>
+                <option value="0">In the End</option>
+                <option value="0">Numb</option>
+                <option value="0">Somewhere I Belong</option>
+            </select>
+
+            <input type="submit" value="Enviar Respostas" class="btn" />
+        </form>
+
+        <!-- Resultado -->
+        <div id="resultado" style="display: none; margin-top: 20px;">
+            <h2 id="mensagemResultado"></h2>
+            <p id="pontuacao"></p>
+        </div>
+    </div>
+
+    <script>
+        function calcularPontuacao() {
+            // Pega as respostas do usuário
+            const q1 = document.getElementById('q1').value;
+            const q2 = document.getElementById('q2').value;
+            const q3 = document.getElementById('q3').value;
+
+            // Variável para contar os pontos
+            let pontos = 0;
+
+            // Adiciona pontos se a resposta for correta
+            pontos += Number(q1); // "Emilly Armstrong" é a resposta correta (valor 1)
+            pontos += Number(q2); // "Hybrid Theory: 20th Anniversary Edition" é a resposta correta (valor 1)
+            pontos += Number(q3); // "Crawling" é a resposta correta (valor 1)
+
+            // Exibe o resultado
+            const resultadoDiv = document.getElementById('resultado');
+            const mensagemResultado = document.getElementById('mensagemResultado');
+            const pontuacaoTexto = document.getElementById('pontuacao');
+
+            resultadoDiv.style.display = 'block';
+
+            if (pontos === 3) {
+                mensagemResultado.textContent = 'Parabéns! Você acertou todas as perguntas! Realmente um fã!!';
+            } else if (pontos === 2) {
+                mensagemResultado.textContent = 'Muito bem! Você acertou 2 de 3 perguntas.';
+            } else if (pontos === 1) {
+                mensagemResultado.textContent = 'Você acertou 1 de 3 perguntas. Continue praticando!';
+            } else {
+                mensagemResultado.textContent = 'Que pena! Você não acertou nenhuma. Tente novamente!';
+            }
+
+            pontuacaoTexto.textContent = `Sua pontuação: ${pontos} de 3.`;
+        }
+    </script>
+</body>
+</html>
