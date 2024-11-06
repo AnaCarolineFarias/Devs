@@ -19,5 +19,5 @@ Este repositório contém [Estudos e pequenos desenvolvimentos que fiz e estou f
 - **FrontEnd:** HTML & CSS
 
 ## Ferramentas Utilizadas
-- **Visual Studio Code Code**
+- **Visual Studio Code**
 
